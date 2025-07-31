@@ -11,3 +11,13 @@
           }
       }
   }
+
+//NOD Sieve
+  vector<int> divisors(n+1,0);
+  for(int i=1;i<=n;i++)
+  {
+    for(int j=i;j<=n;j+=i)
+          {
+              divisors[j]++;
+          }
+  }
