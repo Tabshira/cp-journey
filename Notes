@@ -21,3 +21,42 @@
               divisors[j]++;
           }
   }
+
+//SOD sieve
+  vector<int> SOD(n+1,1);
+  for(int i=2;i<=n;i++)
+  {
+    for(int j=i;j<=n;j+=i)
+          {
+              SOD[j]+=i;
+          }
+  }
+
+  ////GCD
+  int a,b;
+  cin>>a>>b;
+
+  //first
+  while(a>0)
+  {
+      int past_a=a;
+      int past_b=b;
+      a=past_b%past_a;
+      b=past_a;
+  }
+  cout<<b<<endl;
+
+//recursive
+int gcd(int a,int b)
+  {
+      if(a==0) return b;
+      else
+        return gcd(b%a,a);
+  }
+
+//Inbuilt Function
+int ans=__gcd(a,b);
+
+//LCM
+a*b=gcd(a,b)*lcm(a,b)
+int lcm=(a*b)/gcd(a,b);
