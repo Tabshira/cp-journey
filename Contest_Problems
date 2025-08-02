@@ -1,0 +1,21 @@
+W4_Bootcamp::
+
+A) The sequence of n consecutive composite numbers (positive integers that are not prime and not
+ equalto1)lyingbetweentwosuccessiveprimenumberspandp+niscalledaprimegapof lengthn.
+ For example, ⟨24,25,26,27,28⟩between23and29isaprimegapof length6.
+ Your mission is to write a program to calculate, for a given positive integer k, the length of the
+ prime gap that contains k. For convenience, the length is considered 0 in case a prime gap contains k.
+
+Solution:
+ // first store the prime numbers in a vector(using sieve method)
+    int a;
+    while(cin>>a && a!=0)
+    {
+        if(isPrime[a]==1)
+            cout<<0<<endl;
+        else
+        {
+          auto it=lower_bound(Prime.begin(),Prime.end(),a);
+          cout<<*it-*(it-1)<<endl;
+        }
+    }
