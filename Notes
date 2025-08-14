@@ -60,3 +60,25 @@ int ans=__gcd(a,b);
 //LCM
 a*b=gcd(a,b)*lcm(a,b)
 int lcm=(a*b)/gcd(a,b);
+
+//Prefix
+ prefix[0] = ar[0]; //initializing first element
+  for (int i = 1; i < 5; i++) {
+    prefix[i] = prefix[i - 1] + ar[i];
+  }
+ Given an array of n integers, find if any index exists such that the sum of elements to its right is equal to the sum of elements to its left.
+If yes print the index, otherwise print “No Equilibrium”.
+soln:
+long long leftsum=0;
+    long long totalsum=accumulate(A.begin(),A.end(),0LL);
+    for(int i=0;i<N;i++)
+    {
+        long long rightsum=totalsum-leftsum-A[i];
+        if(leftsum==rightsum)
+        {
+            cout<<i<<endl;
+            return 0;
+        }
+        leftsum+=A[i];
+    }
+    cout<<"No Equilibrium"<<endl;
